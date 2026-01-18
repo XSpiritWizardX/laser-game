@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: laser-skies
+    env: static
+    staticPublishPath: game
+    autoDeploy: true
+    routes:
+      - type: rewrite
+        source: "/*"
+        destination: "/index.html"

@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700&display=swap');
+
+:root {
+  --bg-deep: #05070d;
+  --bg-mid: #0f1b2a;
+  --bg-glow: #16324f;
+  --accent: #ff4b4b;
+  --accent-soft: #ff9a4b;
+  --text: #f4f6fb;
+  --hud: #9bb4d6;
+  --frame: #2a3a52;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(22, 50, 79, 0.4), transparent 45%),
+    radial-gradient(circle at 80% 10%, rgba(255, 154, 75, 0.15), transparent 35%),
+    linear-gradient(140deg, var(--bg-deep), var(--bg-mid));
+  color: var(--text);
+  font-family: 'Oxanium', 'Trebuchet MS', sans-serif;
+}
+
+.wrap {
+  width: min(980px, 94vw);
+  display: grid;
+  gap: 18px;
+}
+
+.hud {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.title {
+  font-size: 28px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.help {
+  color: var(--hud);
+  font-size: 14px;
+}
+
+.stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+canvas {
+  width: min(92vw, 960px);
+  height: auto;
+  background: linear-gradient(180deg, rgba(4, 12, 22, 0.9), rgba(10, 18, 30, 0.9));
+  border: 1px solid var(--frame);
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(6, 10, 18, 0.65);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background: rgba(4, 8, 14, 0.35);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms ease;
+}
+
+.overlay.show {
+  opacity: 1;
+}
+
+.overlay-title {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.overlay-body {
+  margin-top: 10px;
+  font-size: 16px;
+  color: var(--hud);
+}
+
+.footer {
+  color: var(--hud);
+  font-size: 13px;
+  text-align: center;
+}
+
+@media (max-width: 720px) {
+  .title {
+    font-size: 22px;
+  }
+
+  .help {
+    font-size: 12px;
+  }
+
+  canvas {
+    width: 92vw;
+  }
+}
