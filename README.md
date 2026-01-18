@@ -1,3 +1,8 @@
-# laser-game
+# i-need-you-to-build
 
-Private execution engine for orchestrating, generating, and deploying SaaS products through a controlled command system.
+I need you to build more for this project. Add more files and functionality.
+
+## Next Steps
+- Define features
+- Add auth
+- Add billing

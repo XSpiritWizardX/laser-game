@@ -1,51 +1,9 @@
 services:
-  - type: worker
-    name: dream-engine-runner
-    env: python
+  - type: static_site
+    name: laser-game
+    env: static
     plan: free
     region: ohio
     autoDeploy: true
-    buildCommand: pip install -r requirements.txt
-    startCommand: python runner/runner.py
-    envVars:
-      - key: PYTHONUNBUFFERED
-        value: "1"
-      - key: RUNNER_POST_RESULTS
-        value: "1"
-      - key: OPENAI_API_KEY
-        sync: false
-      - key: DREAM_ENGINE_GPT_KEY
-        sync: false
-      - key: GITHUB_TOKEN
-        sync: false
-      - key: DISCORD_BOT_TOKEN
-        sync: false
-      - key: DISCORD_TOKEN
-        sync: false
-      - key: ENGINE_CHANNEL_ID
-        sync: false
-      - key: DREAM_ENGINE_RENDER_API_KEY
-        sync: false
-      - key: RENDER_API_KEY
-        sync: false
-      - key: DREAM_ENGINE_RENDER_OWNER_ID
-        sync: false
-      - key: RENDER_OWNER_ID
-        sync: false
-  - type: worker
-    name: dream-engine-bot
-    env: python
-    plan: free
-    region: ohio
-    autoDeploy: true
-    buildCommand: pip install -r requirements.txt
-    startCommand: python bot/bot.py
-    envVars:
-      - key: PYTHONUNBUFFERED
-        value: "1"
-      - key: DISCORD_BOT_TOKEN
-        sync: false
-      - key: DISCORD_TOKEN
-        sync: false
-      - key: DISCORD_GUILD_ID
-        sync: false
+    buildCommand: ""
+    staticPublishPath: game
