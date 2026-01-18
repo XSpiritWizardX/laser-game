@@ -1,8 +1,9 @@
-# i-need-you-to-build
+# laser-game
 
-I need you to build more for this project. Add more files and functionality.
+Project overview goes here.
 
-## Next Steps
-- Define features
-- Add auth
-- Add billing
+## Setup
+- Add setup steps here.
+
+## Development
+- Add dev commands here.
