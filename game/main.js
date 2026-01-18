@@ -23,11 +23,15 @@ const ship = {
   h: 38,
   speed: 320,
   cooldown: 0,
-  invuln: 0
+  invuln: 0,
+  laserColor: null,
+  laserDamage: 1,
+  fireDelay: 0.22
 };
 
 const keys = new Set();
 const lasers = [];
+const upgrades = [];
 const enemies = [];
 const sparks = [];
 const stars = [];
@@ -36,6 +40,7 @@ const palette = {
   ship: '#76d6ff',
   enemy: '#ffb347',
   laser: '#ff4b4b',
+  laserGreen: '#57f58d',
   spark: '#ffd36a',
   hud: '#f4f6fb',
   shadow: 'rgba(5, 10, 18, 0.8)'
@@ -82,7 +87,11 @@ function resetGame() {
   ship.y = world.height - 80;
   ship.cooldown = 0;
   ship.invuln = 0;
+  ship.laserColor = palette.laser;
+  ship.laserDamage = 1;
+  ship.fireDelay = 0.22;
   lasers.length = 0;
+  upgrades.length = 0;
   enemies.length = 0;
   sparks.length = 0;
 }
@@ -126,7 +135,9 @@ function fireLaser() {
     y: ship.y - ship.h * 0.65,
     w: 4,
     h: 14,
-    speed: 700
+    speed: 700,
+    damage: ship.laserDamage,
+    color: ship.laserColor
   });
 }
 
@@ -146,6 +157,23 @@ function spawnEnemy() {
   });
 }
 
+function spawnUpgrade(x, y) {
+  upgrades.push({
+    x: x - 10,
+    y: y - 10,
+    w: 20,
+    h: 20,
+    speed: 120,
+    type: 'green'
+  });
+}
+
+function maybeDropUpgrade(x, y) {
+  if (Math.random() < 0.18) {
+    spawnUpgrade(x, y);
+  }
+}
+
 function spawnSparks(x, y, count) {
   for (let i = 0; i < count; i += 1) {
     sparks.push({
@@ -155,6 +183,16 @@ function spawnSparks(x, y, count) {
       vy: rand(-180, 80),
       life: rand(0.3, 0.6)
     });
+  }
+}
+
+function updateUpgrades(dt) {
+  for (let i = upgrades.length - 1; i >= 0; i -= 1) {
+    const upgrade = upgrades[i];
+    upgrade.y += upgrade.speed * dt;
+    if (upgrade.y > world.height + upgrade.h) {
+      upgrades.splice(i, 1);
+    }
   }
 }
 
@@ -197,7 +235,7 @@ function updateInput(dt) {
 
   if (keys.has('Space') && ship.cooldown <= 0) {
     fireLaser();
-    ship.cooldown = 0.22;
+    ship.cooldown = ship.fireDelay;
   }
 }
 
@@ -261,9 +299,21 @@ function handleCollisions() {
           enemies.splice(i, 1);
           state.score += enemy.value;
           spawnSparks(enemy.x + enemy.w * 0.5, enemy.y + enemy.h * 0.5, 10);
+          maybeDropUpgrade(enemy.x + enemy.w * 0.5, enemy.y + enemy.h * 0.5);
         }
         break;
       }
+    }
+  }
+
+  for (let i = upgrades.length - 1; i >= 0; i -= 1) {
+    const upgrade = upgrades[i];
+    if (rectsIntersect(ship.x - ship.w * 0.5, ship.y - ship.h * 0.4, ship.w, ship.h, upgrade.x, upgrade.y, upgrade.w, upgrade.h)) {
+      upgrades.splice(i, 1);
+      ship.laserColor = palette.laserGreen;
+      ship.laserDamage = 2;
+      ship.fireDelay = 0.18;
+      spawnSparks(ship.x, ship.y - ship.h * 0.2, 10);
     }
   }
 
@@ -295,6 +345,7 @@ function update(dt) {
   ship.invuln = Math.max(0, ship.invuln - dt);
   updateInput(dt);
   updateLasers(dt);
+  updateUpgrades(dt);
   updateEnemies(dt);
   handleCollisions();
   updateSparks(dt);
@@ -335,9 +386,25 @@ function drawShip() {
 }
 
 function drawLasers() {
-  ctx.fillStyle = palette.laser;
   for (const laser of lasers) {
+    ctx.fillStyle = laser.color || palette.laser;
     ctx.fillRect(laser.x, laser.y, laser.w, laser.h);
+  }
+}
+
+function drawUpgrades() {
+  for (const upgrade of upgrades) {
+    ctx.save();
+    ctx.translate(upgrade.x + upgrade.w * 0.5, upgrade.y + upgrade.h * 0.5);
+    ctx.fillStyle = palette.laserGreen;
+    ctx.beginPath();
+    ctx.moveTo(0, -upgrade.h * 0.5);
+    ctx.lineTo(upgrade.w * 0.5, 0);
+    ctx.lineTo(0, upgrade.h * 0.5);
+    ctx.lineTo(-upgrade.w * 0.5, 0);
+    ctx.closePath();
+    ctx.fill();
+    ctx.restore();
   }
 }
 
@@ -372,6 +439,9 @@ function drawHud() {
   ctx.fillText('Score: ' + state.score, 16, 26);
   ctx.fillText('Lives: ' + state.lives, 16, 48);
   ctx.fillText('Level: ' + state.level, 16, 70);
+  ctx.fillText('Laser:', 16, 92);
+  ctx.fillStyle = ship.laserColor === palette.laserGreen ? palette.laserGreen : palette.laser;
+  ctx.fillText(ship.laserColor === palette.laserGreen ? 'Green' : 'Red', 76, 92);
 }
 
 function render() {
@@ -379,6 +449,7 @@ function render() {
   drawStars();
   drawShip();
   drawLasers();
+  drawUpgrades();
   drawEnemies();
   drawSparks();
   drawHud();
