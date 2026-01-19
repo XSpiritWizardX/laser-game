@@ -1,5 +1,5 @@
-MODULE_NAME = "auto_feature_13"
-REVISION = 13
+MODULE_NAME = "auto_feature_23"
+REVISION = 23
 
 FEATURE_BRIEF = {
     "title": "laser-game",
