@@ -1,7 +1,1 @@
-from fastapi import FastAPI
-
-app = FastAPI()
-
-@app.get("/")
-def root():
-    return {"status": "ok"}
+Add Pydantic models (CreateSessionRequest, JoinSessionRequest, SessionResponse). Implement POST /sessions to create a session with host player and return session_id. Implement POST /sessions/{session_id}/join to add a player with a name and return updated session state. Implement GET /sessions/{session_id} to fetch status or 404 if missing. Keep storage in a module-level dict for now.
