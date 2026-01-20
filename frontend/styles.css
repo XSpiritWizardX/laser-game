@@ -1,39 +1,18 @@
-body {
-  background-color: #f0f0f0;
-}
-
 .page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  font-family: Arial, sans-serif;
 }
 
-.orb {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
+.hero {
   background-color: #333;
-}
-
-.shell {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  color: #fff;
   padding: 20px;
 }
 
-.button {
-  background-color: #333;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
+.reveal {
+  animation: reveal 1s forwards;
+}
+
+@keyframes reveal {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
