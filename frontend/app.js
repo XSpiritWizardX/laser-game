@@ -1,9 +1,22 @@
-// Get elements
+const revealItems = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+      }
+    });
+  },
+  { threshold: 0.2 }
+);
+revealItems.forEach(item => revealObserver.observe(item));
+
 const form = document.getElementById('waitlist-form');
-const button = form.querySelector('button');
-// Add event listener
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  // Simulate API call or waitlist addition
-  console.log('User added to waitlist.');
-});
+const message = document.getElementById('waitlist-message');
+if (form && message) {
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+    message.textContent = 'You are on the list. We will be in touch soon.';
+    form.reset();
+  });
+}
