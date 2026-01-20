@@ -1,21 +1,39 @@
-.page {
+body {
   background-color: #f0f0f0;
 }
 
-.hero {
+.page {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
 
-.reveal {
-  animation-name: reveal;
-  animation-duration: 2s;
-  animation-fill-mode: both;
+.orb {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #333;
 }
 
-@keyframes reveal {
-  from { opacity: 0; }
-  to { opacity: 1; }
+.shell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
 }
