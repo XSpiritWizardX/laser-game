@@ -11,6 +11,7 @@
     <div class="page">
       <div class="orb orb--one"></div>
       <div class="orb orb--two"></div>
+      <div class="grid-sheen"></div>
       <div class="shell">
         <header class="nav">
           <div class="logo">laser-game</div>
@@ -23,60 +24,155 @@
         </header>
         <main>
           <section class="hero reveal">
-            <div>
+            <div class="hero-copy">
               <span class="badge">Ship faster · stay aligned</span>
               <h1>laser-game keeps momentum high.</h1>
-              <p>A focused product built to ship faster.</p>
-              <form id="waitlist-form">
+              <p>A focused product built to ship faster with real-time clarity, crisp rituals, and zero-noise priorities.</p>
+              <form id="waitlist-form" class="waitlist">
                 <input type="email" name="email" placeholder="you@company.com" required />
                 <button class="button" type="submit">Join the waitlist</button>
               </form>
-              <p id="waitlist-message"></p>
+              <div class="form-note" id="form-note" aria-live="polite"></div>
+              <div class="hero-meta">
+                <span>Used by teams shipping weekly</span>
+                <span>Zero setup · 5 min to onboard</span>
+              </div>
             </div>
-            <div class="panel">
-              <h3>Live pulse</h3>
-              <p>Track experiments, revenue impact, and launch readiness in one view.</p>
-              <div class="stat-grid">
-                <div class="stat"><strong>3x</strong><br/>Faster rollout</div>
-                <div class="stat"><strong>12</strong><br/>Active signals</div>
-                <div class="stat"><strong>97%</strong><br/>Team clarity</div>
+            <div class="hero-panel">
+              <div class="panel-card">
+                <div class="panel-header">
+                  <span>Live sprint board</span>
+                  <span class="status">Active</span>
+                </div>
+                <div class="panel-row">
+                  <div class="chip">Goal</div>
+                  <p>Ship laser-game v1 beta without slips.</p>
+                </div>
+                <div class="panel-row">
+                  <div class="chip">Focus</div>
+                  <ul>
+                    <li>Critical fixes</li>
+                    <li>Launch narrative</li>
+                    <li>Team velocity</li>
+                  </ul>
+                </div>
+                <div class="panel-stats">
+                  <div>
+                    <strong>92%</strong>
+                    <span>On track</span>
+                  </div>
+                  <div>
+                    <strong>4.8h</strong>
+                    <span>Cycle time</span>
+                  </div>
+                  <div>
+                    <strong>23</strong>
+                    <span>Live tasks</span>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
+
           <section id="features" class="section reveal">
-            <h2>Features</h2>
-            <div class="grid">
-              <div class="card">Signal playbooks with owners and next actions.</div>
-              <div class="card">Sprint-ready launch checklists and guardrails.</div>
-              <div class="card">Pricing and positioning snapshots in minutes.</div>
+            <div class="section-head">
+              <h2>Features tuned for velocity.</h2>
+              <p>Laser-focus the work that matters and stay aligned without drowning in tools.</p>
+            </div>
+            <div class="card-grid">
+              <article class="card">
+                <h3>Signal-first roadmap</h3>
+                <p>One glance shows what is moving, blocked, or at risk so the team never guesses.</p>
+              </article>
+              <article class="card">
+                <h3>Ritual automation</h3>
+                <p>Daily summaries, weekly nudges, and sprint health without manual check-ins.</p>
+              </article>
+              <article class="card">
+                <h3>Momentum scoring</h3>
+                <p>Live confidence and velocity metrics that stay aligned with shipping reality.</p>
+              </article>
             </div>
           </section>
-          <section id="workflow" class="section reveal">
-            <h2>Workflow</h2>
-            <div class="grid">
-              <div class="card">Define your goal and timeline in a single brief.</div>
-              <div class="card">Assign owners, blockers, and escalation routes.</div>
-              <div class="card">Ship with confidence and keep momentum visible.</div>
+
+          <section id="workflow" class="section workflow reveal">
+            <div class="section-head">
+              <h2>Workflow built for modern product teams.</h2>
+              <p>Set your cadence, sync focus, and clear blockers in minutes.</p>
+            </div>
+            <div class="timeline">
+              <div class="step">
+                <span class="step-number">01</span>
+                <h3>Define the mission</h3>
+                <p>Lock on a single sprint objective and map priorities to outcomes.</p>
+              </div>
+              <div class="step">
+                <span class="step-number">02</span>
+                <h3>Sync daily</h3>
+                <p>Short, focused check-ins that highlight risks before they land.</p>
+              </div>
+              <div class="step">
+                <span class="step-number">03</span>
+                <h3>Ship with confidence</h3>
+                <p>Get a launch-ready report with risk, velocity, and impact.</p>
+              </div>
             </div>
           </section>
-          <section id="pricing" class="section reveal">
-            <h2>Pricing</h2>
-            <div class="grid">
-              <div class="card">Starter · $39/mo · launch playbooks</div>
-              <div class="card">Growth · $99/mo · team dashboards</div>
-              <div class="card">Scale · $249/mo · priority support</div>
+
+          <section id="pricing" class="section pricing reveal">
+            <div class="section-head">
+              <h2>Simple pricing with a laser focus.</h2>
+              <p>Start small, scale without friction.</p>
+            </div>
+            <div class="pricing-grid">
+              <article class="price-card">
+                <h3>Launch</h3>
+                <p class="price">$0</p>
+                <p class="price-note">For up to 3 teammates</p>
+                <ul>
+                  <li>Core momentum board</li>
+                  <li>Daily summaries</li>
+                  <li>Email support</li>
+                </ul>
+                <a class="button ghost" href="#cta">Start now</a>
+              </article>
+              <article class="price-card featured">
+                <div class="tag">Most teams</div>
+                <h3>Momentum</h3>
+                <p class="price">$12</p>
+                <p class="price-note">Per seat / month</p>
+                <ul>
+                  <li>Everything in Launch</li>
+                  <li>Automation rituals</li>
+                  <li>Risk forecasts</li>
+                </ul>
+                <a class="button" href="#cta">Get access</a>
+              </article>
+              <article class="price-card">
+                <h3>Enterprise</h3>
+                <p class="price">Custom</p>
+                <p class="price-note">For 50+ seats</p>
+                <ul>
+                  <li>Dedicated success</li>
+                  <li>Security review</li>
+                  <li>Custom workflows</li>
+                </ul>
+                <a class="button ghost" href="#cta">Talk to us</a>
+              </article>
             </div>
           </section>
-          <section id="cta" class="section reveal">
-            <div class="cta">
-              <h2>Ready to move faster?</h2>
-              <p>Join the early access list and get weekly launch guidance.</p>
-              <a class="button" href="#">Request access</a>
+
+          <section id="cta" class="section cta reveal">
+            <div>
+              <h2>Ready to keep momentum high?</h2>
+              <p>Join the early access list and be the first to experience laser-game.</p>
             </div>
+            <a class="button" href="#waitlist-form">Request invite</a>
           </section>
         </main>
-        <footer>
-          <span>laser-game · Built for momentum</span>
+        <footer class="footer">
+          <span>laser-game © 2026</span>
+          <span>Built for teams that ship.</span>
         </footer>
       </div>
     </div>
