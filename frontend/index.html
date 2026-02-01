@@ -6,6 +6,9 @@
     <title>laser-game</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="app.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@300;400;600&display=swap" rel="stylesheet" />
   </head>
   <body>
     <div class="page">
@@ -25,186 +28,176 @@
         <main>
           <section class="hero reveal" id="top">
             <div class="hero-copy">
-              <span class="badge">Ship faster · stay aligned</span>
+              <span class="badge">Ship faster - stay aligned</span>
               <h1>laser-game keeps momentum high.</h1>
               <p>A focused product built to ship faster with real-time clarity, crisp rituals, and zero-noise priorities.</p>
               <form class="waitlist" data-waitlist>
-                <input type="email" name="email" placeholder="you@company.com" required />
+                <input type="email" name="email" placeholder="you@studio.com" required />
                 <button class="button" type="submit">Join waitlist</button>
               </form>
-              <div class="form-status" aria-live="polite"></div>
-              <div class="hero-actions">
-                <a class="button ghost" href="#features">See the playbook</a>
-                <a class="button ghost" href="#pricing">Compare plans</a>
-              </div>
-            </div>
-            <div class="hero-panel">
-              <div class="panel-card">
-                <h3>Live Mission Control</h3>
-                <p>Track goals, owner status, and the next best action for every team.</p>
-                <div class="panel-metrics">
-                  <div>
-                    <span>Cycle time</span>
-                    <strong>3.2 days</strong>
-                  </div>
-                  <div>
-                    <span>Ritual adherence</span>
-                    <strong>92%</strong>
-                  </div>
+              <div class="waitlist-note" data-waitlist-note>We respond within 48 hours.</div>
+              <div class="hero-stats">
+                <div>
+                  <span class="stat">2.4x</span>
+                  <span class="label">faster sprint close</span>
+                </div>
+                <div>
+                  <span class="stat">12</span>
+                  <span class="label">minutes to onboard</span>
+                </div>
+                <div>
+                  <span class="stat">0</span>
+                  <span class="label">tolerated chaos</span>
                 </div>
               </div>
-              <div class="panel-card">
-                <h3>Focus Beam</h3>
-                <p>Auto-prioritize work based on impact, deadline, and dependency heat.</p>
+            </div>
+            <div class="hero-frame">
+              <div class="screen">
+                <div class="screen-header">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="screen-body">
+                  <div class="pulse-card">
+                    <h3>Pulse Queue</h3>
+                    <p>Only the five moves that matter now.</p>
+                    <div class="chip-row">
+                      <span class="chip">Story</span>
+                      <span class="chip">QA</span>
+                      <span class="chip">Launch</span>
+                    </div>
+                  </div>
+                  <div class="timeline">
+                    <div class="timeline-item">
+                      <strong>Standup</strong>
+                      <span>11:00 AM</span>
+                    </div>
+                    <div class="timeline-item active">
+                      <strong>Laser Review</strong>
+                      <span>1:30 PM</span>
+                    </div>
+                    <div class="timeline-item">
+                      <strong>Ship Window</strong>
+                      <span>3:00 PM</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
 
-          <section id="features" class="section reveal">
-            <div class="section-head">
-              <h2>Cut the noise, amplify shipping.</h2>
-              <p>Everything you need to keep a high-output product team aligned.</p>
+          <section class="marquee" aria-label="laser-game highlights">
+            <div class="marquee-track">
+              <span>Aligned missions</span>
+              <span>Ritual clarity</span>
+              <span>Laser focus</span>
+              <span>Aligned missions</span>
+              <span>Ritual clarity</span>
+              <span>Laser focus</span>
+            </div>
+          </section>
+
+          <section class="features reveal" id="features">
+            <div class="section-heading">
+              <h2>Focus the entire squad.</h2>
+              <p>Turn collaboration into a clean, energizing loop that ends with shipped work.</p>
             </div>
             <div class="feature-grid">
-              <article class="feature-card">
-                <h3>Laser Focus Boards</h3>
-                <p>Single-screen view of goals, owners, and blockers with a bias for action.</p>
+              <article>
+                <h3>Priority Beam</h3>
+                <p>Laser ranking surfaces only what moves the product forward.</p>
               </article>
-              <article class="feature-card">
-                <h3>Ritual Engine</h3>
-                <p>Guided weekly rituals, retro prompts, and decision logs that stick.</p>
+              <article>
+                <h3>Ritual Blocks</h3>
+                <p>Structured rituals keep reviews, retros, and decisions effortless.</p>
               </article>
-              <article class="feature-card">
-                <h3>Instant Alignment</h3>
-                <p>Auto-updated briefs that pull in status, metrics, and decisions.</p>
+              <article>
+                <h3>Signal Sync</h3>
+                <p>Live alignment highlights what is blocked before it spreads.</p>
               </article>
-              <article class="feature-card">
-                <h3>Launch Radar</h3>
-                <p>See shipping risk early with dependency heatmaps and drift alerts.</p>
-              </article>
-              <article class="feature-card">
-                <h3>Pulse Signals</h3>
-                <p>Micro-surveys and sentiment signals reveal friction before it compounds.</p>
-              </article>
-              <article class="feature-card">
-                <h3>Ops Timeline</h3>
-                <p>Every decision and dependency is pinned to a clean, searchable timeline.</p>
+              <article>
+                <h3>Launch Ledger</h3>
+                <p>Track every release without drowning in meetings.</p>
               </article>
             </div>
           </section>
 
-          <section id="workflow" class="section split reveal">
-            <div class="split-copy">
-              <h2>From idea to launch, without the drift.</h2>
-              <p>laser-game helps teams steer every step with clear ownership, sharper rituals, and transparent priorities.</p>
-              <ul class="list">
-                <li>Align objectives and OKRs in minutes.</li>
-                <li>Turn retros into measurable adjustments.</li>
-                <li>Keep decisions visible and current.</li>
-              </ul>
-              <a class="button" href="#cta">Secure early access</a>
+          <section class="workflow reveal" id="workflow">
+            <div class="section-heading">
+              <h2>Workflow tuned for shipping.</h2>
             </div>
-            <div class="timeline">
-              <div class="timeline-step">
-                <span>01</span>
-                <div>
-                  <h4>Define the mission</h4>
-                  <p>Set targets, owners, and decision points.</p>
-                </div>
+            <div class="workflow-grid">
+              <div class="step">
+                <span class="step-number">01</span>
+                <h3>Ingest</h3>
+                <p>Plug in your backlog and auto-tag the essentials.</p>
               </div>
-              <div class="timeline-step">
-                <span>02</span>
-                <div>
-                  <h4>Run the rituals</h4>
-                  <p>Weekly planning, demos, and retros with auto-notes.</p>
-                </div>
+              <div class="step">
+                <span class="step-number">02</span>
+                <h3>Align</h3>
+                <p>Shape weekly missions and map owners in minutes.</p>
               </div>
-              <div class="timeline-step">
-                <span>03</span>
-                <div>
-                  <h4>Ship with clarity</h4>
-                  <p>Live status and drift alerts keep everyone in sync.</p>
-                </div>
+              <div class="step">
+                <span class="step-number">03</span>
+                <h3>Ship</h3>
+                <p>Close the loop with one click and share a clean summary.</p>
               </div>
             </div>
           </section>
 
-          <section class="metrics reveal">
-            <div class="metric">
-              <strong>4.7x</strong>
-              <span>Faster sprint alignment</span>
-            </div>
-            <div class="metric">
-              <strong>28%</strong>
-              <span>Fewer context switches</span>
-            </div>
-            <div class="metric">
-              <strong>12</strong>
-              <span>Weeks to ROI</span>
-            </div>
-          </section>
-
-          <section id="pricing" class="section reveal">
-            <div class="section-head">
-              <h2>Simple plans for high-output teams.</h2>
-              <p>Scale from tight teams to multi-pod orgs without the overhead.</p>
+          <section class="pricing reveal" id="pricing">
+            <div class="section-heading">
+              <h2>Simple pricing. Intense focus.</h2>
+              <p>Start small and scale as your team grows.</p>
             </div>
             <div class="pricing-grid">
               <article class="price-card">
                 <h3>Starter</h3>
-                <p class="price">$19<span>/seat</span></p>
+                <div class="price">$29</div>
+                <p>For tiny squads shipping weekly.</p>
                 <ul>
-                  <li>Core boards and rituals</li>
-                  <li>Weekly reports</li>
-                  <li>5 projects</li>
+                  <li>Up to 6 teammates</li>
+                  <li>1 workspace</li>
+                  <li>Weekly rituals</li>
                 </ul>
-                <button class="button ghost">Get started</button>
+                <button class="button ghost">Choose Starter</button>
               </article>
-              <article class="price-card featured">
-                <div class="chip">Most wanted</div>
+              <article class="price-card highlight">
+                <div class="pill">Most loved</div>
                 <h3>Momentum</h3>
-                <p class="price">$39<span>/seat</span></p>
+                <div class="price">$79</div>
+                <p>For teams who ship every day.</p>
                 <ul>
-                  <li>Everything in Starter</li>
-                  <li>Decision timeline</li>
-                  <li>Automation rules</li>
-                  <li>Unlimited projects</li>
+                  <li>Up to 24 teammates</li>
+                  <li>Live pulse board</li>
+                  <li>Priority ranking</li>
                 </ul>
                 <button class="button">Choose Momentum</button>
               </article>
               <article class="price-card">
-                <h3>Enterprise</h3>
-                <p class="price">Custom</p>
+                <h3>Orbit</h3>
+                <div class="price">$199</div>
+                <p>For product orgs that scale.</p>
                 <ul>
-                  <li>Advanced governance</li>
-                  <li>SSO + audit logs</li>
-                  <li>Dedicated success lead</li>
+                  <li>Unlimited teammates</li>
+                  <li>Multi-workspace</li>
+                  <li>Custom rituals</li>
                 </ul>
-                <button class="button ghost">Talk to sales</button>
+                <button class="button ghost">Talk to us</button>
               </article>
             </div>
           </section>
 
-          <section id="cta" class="cta reveal">
-            <div>
-              <h2>Keep the shipper energy.</h2>
-              <p>Join the early cohort and help shape laser-game for high-velocity teams.</p>
+          <section class="cta reveal" id="cta">
+            <div class="cta-card">
+              <div>
+                <h2>Ready to run a sharper week?</h2>
+                <p>Join the early access list and get a guided setup.</p>
+              </div>
+              <a class="button" href="#top">Request access</a>
             </div>
-            <form class="waitlist" data-waitlist>
-              <input type="email" name="email" placeholder="work@team.com" required />
-              <button class="button" type="submit">Request access</button>
-            </form>
-            <div class="form-status" aria-live="polite"></div>
           </section>
         </main>
-        <footer class="footer">
-          <span>laser-game © 2026</span>
-          <div class="footer-links">
-            <a href="#">Privacy</a>
-            <a href="#">Terms</a>
-            <a href="#">Contact</a>
-          </div>
-        </footer>
+        <footer class="footer">Built for teams that ship with intent.</footer>
       </div>
     </div>
   </body>
