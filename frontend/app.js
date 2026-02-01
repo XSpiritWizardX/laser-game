@@ -1,35 +1,29 @@
-const revealElements = document.querySelectorAll('.reveal');
-const waitlistForms = document.querySelectorAll('[data-waitlist]');
+const revealNodes = document.querySelectorAll('.reveal');
+const waitlistForm = document.querySelector('[data-waitlist]');
+const waitlistNote = document.querySelector('[data-waitlist-note]');
 
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
+        entry.target.classList.add('visible');
         observer.unobserve(entry.target);
       }
     });
   },
-  { threshold: 0.15 }
+  { threshold: 0.2 }
 );
 
-revealElements.forEach((el) => observer.observe(el));
+revealNodes.forEach((node) => observer.observe(node));
 
-waitlistForms.forEach((form) => {
-  const status = form.nextElementSibling;
-  form.addEventListener('submit', (event) => {
+if (waitlistForm) {
+  waitlistForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    const input = form.querySelector('input[type="email"]');
-    const email = input.value.trim();
-
-    if (!email || !email.includes('@')) {
-      status.textContent = 'Add a valid email to get early access.';
-      status.style.color = '#ff6a3d';
-      return;
-    }
-
-    status.textContent = 'You are on the list. Watch your inbox.';
-    status.style.color = '#38f2c4';
-    form.reset();
+    const email = waitlistForm.querySelector('input[type="email"]').value.trim();
+    if (!email) return;
+    waitlistNote.textContent = `Thanks, ${email}. You are on the list.`;
+    waitlistForm.reset();
+    waitlistNote.classList.add('confirmed');
+    setTimeout(() => waitlistNote.classList.remove('confirmed'), 2400);
   });
-});
+}
