@@ -28,100 +28,84 @@
         </header>
 
         <main>
-          <section class='hero reveal' id='top'>
-            <div class='hero-copy'>
-              <span class='eyebrow'>New Era Competitive Arena</span>
-              <h1>Design laser battles that feel cinematic, fair, and addictive.</h1>
-              <p>laser-game gives teams a real-time control room for map logic, player balancing, and instant highlights.</p>
-              <div class='hero-actions'>
-                <a class='button button--solid' href='#cta'>Join Waitlist</a>
-                <a class='button button--ghost' href='#workflow'>See Workflow</a>
-              </div>
-              <div class='hero-metrics'>
-                <div><strong>4.2M</strong><span>Simulated rounds</span></div>
-                <div><strong>98ms</strong><span>Latency target</span></div>
-                <div><strong>64</strong><span>Player lobbies</span></div>
-              </div>
+          <section class='hero reveal'>
+            <p class='eyebrow'>Competitive arena toolkit</p>
+            <h1>Run faster, brighter, higher-energy laser battles.</h1>
+            <p class='subhead'>laser-game turns your venue into a live command center: instant match setup, dynamic missions, and crowd-hyping scoreboards.</p>
+            <div class='hero-actions'>
+              <a class='button button--solid' href='#cta'>Join Waitlist</a>
+              <a class='button button--ghost' href='#features'>See Features</a>
             </div>
-
-            <aside class='hero-panel reveal'>
-              <p class='panel-label'>Live Round</p>
-              <ul class='scoreboard'>
-                <li><span>Neon Vipers</span><strong>18</strong></li>
-                <li><span>Solar Runners</span><strong>16</strong></li>
-                <li><span>Prism Unit</span><strong>14</strong></li>
-              </ul>
-              <div class='beam'></div>
-            </aside>
+            <div class='hero-stats'>
+              <article>
+                <span data-count='12480'>12,480</span>
+                <p>matches launched</p>
+              </article>
+              <article>
+                <span>99.98%</span>
+                <p>uptime in peak hours</p>
+              </article>
+              <article>
+                <span>+34%</span>
+                <p>repeat bookings</p>
+              </article>
+            </div>
           </section>
 
           <section id='features' class='section reveal'>
-            <h2>Built for operators, creators, and players</h2>
-            <div class='feature-grid'>
+            <h2>Built for high-intensity venues</h2>
+            <div class='cards'>
               <article class='card'>
-                <h3>Map Intelligence</h3>
-                <p>Generate balanced spawn logic and lane pressure with one-click presets.</p>
+                <h3>Real-time Ops</h3>
+                <p>Track active players, equipment health, and round status on one tactical board.</p>
               </article>
               <article class='card'>
-                <h3>Instant Replays</h3>
-                <p>Auto-detect clutch moments and publish a share-ready clip in seconds.</p>
+                <h3>Mode Engine</h3>
+                <p>Switch from classic elimination to objective raids or survival in one tap.</p>
               </article>
               <article class='card'>
-                <h3>Adaptive Difficulty</h3>
-                <p>Tune enemy behavior and puzzle paths based on session-level performance.</p>
+                <h3>Dynamic Lighting Cues</h3>
+                <p>Sync arena lights and countdown effects to mission states for cinematic sessions.</p>
               </article>
             </div>
           </section>
 
-          <section id='workflow' class='section section--alt reveal'>
-            <h2>Workflow in three moves</h2>
-            <div class='steps'>
-              <article><span>01</span><h3>Prototype</h3><p>Use arena blocks to draft a playable route in minutes.</p></article>
-              <article><span>02</span><h3>Simulate</h3><p>Stress-test balance with AI squads and telemetry overlays.</p></article>
-              <article><span>03</span><h3>Launch</h3><p>Deploy to live lobbies and monitor engagement in real time.</p></article>
-            </div>
+          <section id='workflow' class='section reveal'>
+            <h2>From booking to leaderboard in 3 steps</h2>
+            <ol class='workflow'>
+              <li><strong>Load teams:</strong> import bookings and auto-assign player slots.</li>
+              <li><strong>Launch mission:</strong> choose map, duration, and power profile.</li>
+              <li><strong>Publish highlights:</strong> auto-share top moments and standings.</li>
+            </ol>
           </section>
 
           <section id='pricing' class='section reveal'>
-            <h2>Pricing for teams that ship fast</h2>
-            <div class='pricing-grid'>
+            <h2>Simple plans, serious output</h2>
+            <div class='pricing'>
               <article class='price-card'>
                 <h3>Starter</h3>
-                <p class='price'>$29<span>/mo</span></p>
-                <p>For solo creators building first arenas.</p>
-                <button type='button' class='button button--ghost' data-plan='Starter'>Choose Starter</button>
+                <p class='price'>$89<span>/mo</span></p>
+                <p>For single-room laser venues.</p>
               </article>
               <article class='price-card featured'>
-                <h3>Pro Arena</h3>
-                <p class='price'>$99<span>/mo</span></p>
-                <p>Advanced automation, replay pipeline, and team seats.</p>
-                <button type='button' class='button button--solid' data-plan='Pro Arena'>Choose Pro</button>
-              </article>
-              <article class='price-card'>
-                <h3>Enterprise</h3>
-                <p class='price'>Custom</p>
-                <p>Dedicated infra, SLAs, private model tuning.</p>
-                <button type='button' class='button button--ghost' data-plan='Enterprise'>Talk to Sales</button>
+                <h3>Arena Pro</h3>
+                <p class='price'>$179<span>/mo</span></p>
+                <p>Multi-room routing, live overlays, and advanced game logic.</p>
               </article>
             </div>
           </section>
 
-          <section id='cta' class='section cta reveal'>
-            <h2>Ship your first laser arena in days, not quarters.</h2>
-            <form id='waitlistForm' class='waitlist' novalidate>
+          <section id='cta' class='cta reveal'>
+            <h2>Secure early access</h2>
+            <p>Get onboarding priority, founder pricing, and launch templates.</p>
+            <form class='waitlist-form' novalidate>
               <label class='sr-only' for='email'>Email</label>
-              <input id='email' name='email' type='email' placeholder='you@studio.com' required />
-              <button type='submit' class='button button--solid'>Request Invite</button>
+              <input id='email' name='email' type='email' placeholder='you@venue.com' required />
+              <button class='button button--solid' type='submit'>Join Waitlist</button>
             </form>
-            <p id='waitlistMsg' class='waitlist-msg'>1,287 builders already in line.</p>
-            <p class='tiny'>Private alpha access rolls out weekly.</p>
+            <p class='waitlist-feedback' aria-live='polite'></p>
           </section>
         </main>
-
-        <footer class='footer'>
-          <span>© 2026 laser-game</span>
-          <a href='#top'>Back to top</a>
-        </footer>
       </div>
     </div>
   </body>
